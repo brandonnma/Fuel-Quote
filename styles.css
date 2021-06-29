@@ -44,3 +44,71 @@ nav{
 .links ul li a:hover::after{
 	height: calc(100% + 8px)
 }*/
+.login-page{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(loginback.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.form-box{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: #ffff;
+    padding: 5px;
+}
+.inputtabs{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s;
+}
+.inputtabs a{
+    color: #080808;
+    text-decoration: none;
+}
+.companyname{
+    margin: 80px 0 0 0;
+    text-align: center;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0px;
+    margin: 5px 0px 15px;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit-button{
+    width:85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #aa212c,#ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.check-box{
+    margin: 5px 10px 20px 20px;
+}
+span{
+    color: #777;
+    font-size: 12px;
+    bottom: 111px;
+    position: absolute;
+}
+#login{
+    left: 50px;
+}
+#Register{
+    left: 50px;
+}
