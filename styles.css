@@ -4,53 +4,45 @@
     font-family: 'Roboto', sans-serif;
 }
 .header{
-    background-color: #4d4d4d;
-}
-
-nav{
-    display: flex;
-    padding: 1% 10%;
-}
-
-.links{
-    flex: 1;
-    text-align: right;
-}
-
-.links ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 5px 10px;
-    position: relative;
-}
-
-.links ul li a{
-    color: #bfbfbf;
-    text-decoration: none;
-}
-
-/*.links ul li a::after{
-	content: "";
-    background: white;
-	mix-blend-mode: exclusion;
-    width: calc(100% + 20px);
-    height: 0;
-    position: absolute;
-    bottom: -4px;
-    left: -10px;
-	transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-
-.links ul li a:hover::after{
-	height: calc(100% + 8px)
-}*/
-.login-page{
     height: 100%;
     width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(loginback.jpg);
     background-position: center;
     background-size: cover;
     position: absolute;
+}
+nav{
+    background-color: #4d4d4d;
+    display: flex;
+    padding: 1% 10%;
+}
+.links{
+    flex: 1;
+    text-align: right;
+}
+.links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 5px 10px;
+    position: relative;
+}
+.links ul li a{
+    color: #bfbfbf;
+    text-decoration: none;
+}
+.links ul li a::after{
+	content: "";
+    background: white;
+	mix-blend-mode: exclusion;
+    width: calc(100% + 2px);
+    height: 0;
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+	transition: all .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.links ul li a:hover::after{
+	height: calc(100% + 8px)
 }
 .form-box{
     width: 380px;
@@ -111,4 +103,36 @@ span{
 }
 #Register{
     left: 50px;
+}
+.history-table{
+    min-width: 400px;
+    margin: 25px 0;
+    font-size: 0.9em;
+    border-collapse: collapse;
+    position: relative;
+    margin: 6% auto;
+}
+caption{
+    text-align: left;
+    background-color: #b1412e;
+    padding: 12px 15px;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: x-large;
+}
+.history-table tr th{
+    background-color: #d37f30;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+.history-table th, .history-table td{
+    padding: 12px 15px;
+    background-color: #ffffff;
+}
+.history-table td{
+    border-bottom: 1px solid #dddddd;
+}
+.history-table tr:last-of-type{
+    border-bottom: 5px solid #d37f30;
 }
