@@ -1,54 +1,66 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Fuel Quote Form</title>
-</head>
-<body>
-	<h1> Fuel Quote Form </h1>
-<form>
-	<table>
-	<tr>
-		<td>
-			Gallons Requested:
-		</td>
-		<td>
-			<input type="number" min="0" name="">
-		</td>
-	</tr>	
-	<tr>
-		<td>
-			Delivery Address:
-		</td>
-		<td>
-			<input type="text" name="">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Delivery Date:
-		</td>
-		<td>
-			<input type="Date" name="">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Suggested Price / Gallon: $
-		</td>
-		<td>
-			<input type="number" min="0" name="">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Total Amount Due: $
-		</td>
-		<td>
-			<input type="number" min="0" name="">
-		</td>
-	</tr>
-	</table>
-</form>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuel Quote Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <a href="index.html"><h1>Company Name/logo</h1></a>
+        <div class="links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">Fuel Quote Form</a></li>
+            <li><a href="history.html">Fuel Quote History</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="">Profile</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!----Form Page---->
+      <div class="form-position">
+        <div class="form-container">
+          <div class="form-head">Fuel Quote Form</div>
+          <form action="#">
+            <div class="request-detail">
+              <div class="input-box">
+                <div class="request">Gallons Requested:</div>
+                <input type="number" min="0" placeholder="Enter gallons requested" required/>
+              </div>
+              <div class="input-box">
+                <div class="request">Delivery Address:</div>
+                <input type="text" readonly />
+              </div>
+              <div class="input-box">
+                <div class="request">Delivery Date:</div>
+                <input type="Date" />
+              </div>
+              <div class="input-box">
+                <div class="request">Suggested Price Per Gallon:</div>
+                <input type="number" readonly />
+              </div>
+              <div class="input-box">
+                <div class="request">Total Amount Due:</div>
+                <input type="number" readonly />
+              </div>
+            </div>
+            <div class="form-button">
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

@@ -44,6 +44,7 @@ nav{
 .links ul li a:hover::after{
 	height: calc(100% + 8px)
 }
+/* login & register page */
 .form-box{
     width: 380px;
     height: 480px;
@@ -104,6 +105,7 @@ span{
 #Register{
     left: 50px;
 }
+/* hisory page */
 .history-table{
     min-width: 400px;
     margin: 25px 0;
@@ -135,4 +137,55 @@ caption{
 }
 .history-table tr:last-of-type{
     border-bottom: 5px solid #d37f30;
+}
+/* form page */
+.form-position{
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+.form-container{
+    max-width: 500px;
+    width: 100%;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+.form-container .form-head{
+    font-size: 25px;
+    font-weight: 1000;
+    position: relative;
+    padding: 10px;
+}
+form .request-detail .input-box{
+    margin: 15px;
+}
+.request-detail .input-box .request{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.request-detail .input-box input{
+    height: 30px;
+    width: 96%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px; 
+}
+form .form-button{
+    height: 45px;
+    margin: 45px 0;
+}
+form .form-button input{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #aa212c,#ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
 }
