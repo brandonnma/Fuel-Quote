@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuel Quote Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <a href="home.html"><h1>Company Name/logo</h1></a>
+        <div class="links">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="FuelQuoteForm.html">Fuel Quote Form</a></li>
+            <li><a href="history.html">Fuel Quote History</a></li>
+            <li><a href="login.html">Log Out</a></li>
+            <li><a href="ClientProfile.html">Profile</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!----Home page---->
+      <script>
+        if(sessionStorage.getItem("AuthenState")===null){
+          window.location.href = "login.html";
+        }
+      </script>
+    </section>
+  </body>
+</html>
