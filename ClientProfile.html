@@ -29,6 +29,11 @@
         </div>
       </nav>
       <!----create any new pages under this---->
+      <script>
+        if(sessionStorage.getItem("AuthenState")===null){
+          window.location.href = "login.html";
+        }
+      </script>
       <div class = "ProfileManage">
         <form id ="ProfMan" class= "profiletabs">
         <h1>Profile Management</h1>
