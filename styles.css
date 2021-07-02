@@ -138,28 +138,6 @@ caption{
 .history-table tr:last-of-type{
     border-bottom: 5px solid #d37f30;
 }
-.ProfileManage{
-    background: white;
-    width: 500px;
-    height: 350px;
-    position: relative;
-    margin: 2% auto;
-    background: #ffff;
-    padding: 5px;
-    text-align: center;
-}
-.submitbtn{
-    width:30%;
-    padding: 10px 30px;
-    cursor: pointer;
-    display: block;
-    margin: auto;
-    margin-top: 10px;
-    background: linear-gradient(to right, #aa212c,#ffad06);
-    border: 0;
-    outline: none;
-    border-radius: 30px;
-}
 /* form page */
 .form-position{
     display: flex;
