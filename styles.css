@@ -107,22 +107,14 @@ span{
 }
 /* hisory page */
 .history-table{
-    min-width: 400px;
+    border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    border-collapse: collapse;
-    position: relative;
-    margin: 6% auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
 }
-caption{
-    text-align: left;
-    background-color: #b1412e;
-    padding: 12px 15px;
-    color: #ffffff;
-    font-weight: bolder;
-    font-size: x-large;
-}
-.history-table tr th{
+.history-table thead tr{
     background-color: #d37f30;
     color: #ffffff;
     text-align: left;
@@ -130,13 +122,15 @@ caption{
 }
 .history-table th, .history-table td{
     padding: 12px 15px;
-    background-color: #ffffff;
 }
-.history-table td{
+.history-table tbody tr{
     border-bottom: 1px solid #dddddd;
 }
-.history-table tr:last-of-type{
-    border-bottom: 5px solid #d37f30;
+.history-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+.history-table tbody tr:last-of-type{
+    border-bottom: 2px solid #d37f30;
 }
 /* form page */
 .form-position{
@@ -146,8 +140,7 @@ caption{
     align-items: center;
 }
 .form-container{
-    max-width: 500px;
-    width: 100%;
+    min-width: 500px;
     background: #ffffff;
     padding: 25px 30px;
     border-radius: 5px;
