@@ -18,7 +18,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="">Fuel Quote Form</a></li>
-                        <li><a href="history.html">Fuel Quote History</a></li>
+                        <li><a href="">Fuel Quote History</a></li>
                         <li><a href="">Login</a></li>
                         <li><a href="register.html">Register</a></li>
                         <li><a href="">Profile</a></li>
@@ -31,15 +31,32 @@
       <h1>Company Name/logo</h1>
     </div>
     <form id="login" class="inputtabs">
-      <input type="text" class = "input-field" placeholder="User ID" required>
-      <input type="text" class = "input-field" placeholder="Password" required>
+      <input type="text" class = "input-field" placeholder="User ID" id="username" required>
+      <input type="password" class = "input-field" placeholder="Password" id="password" required>
       <input type="checkbox" class="check-box"><span>Remember login.</span>
-      <button type = "submit" class= "submit-button">Log in</button>
+      <input type = "button" value = "Login" onclick="validate()" class= "submit-button" ></button>
       <button type = "submit" class= "submit-button"><a href="register.html">Need to Register?</a></button>
     </form>
   </div>
     </section>
   </body>
+  <script>
+    function validate(){
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      if (username === "user" && password === "web_dev") {
+          username = "";
+          password = "";
+          sessionStorage.setItem("AuthenState","Authen");
+          alert("You have successfully logged in.");
+          window.location.href="ClientProfile.html";
+          return false;
+      } else {
+          alert("Wrong username and/or password");
+      }
+    }
+  </script>
+  
 </html>
 
 
