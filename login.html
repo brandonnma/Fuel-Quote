@@ -41,31 +41,19 @@
     </section>
   </body>
   <script>
-    function validate(){
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-      if (username === "user" && password === "web_dev") {
-          username = "";
-          password = "";
-          sessionStorage.setItem("AuthenState","Authen");
-          alert("You have successfully logged in.");
-          window.location.href="ClientProfile.html";
-          return false;
-      } else {
-          alert("Wrong username and/or password");
-      }
-    }
+        function validate(){
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          if (username === "user" && password === "pass") {
+            username = "";
+            password = "";
+            sessionStorage.setItem("AuthenState","Authen");
+            alert("You have successfully logged in.");
+            window.location.href="ClientProfile.html";
+            return false;
+        } else {
+            alert("Wrong username and/or password");
+        }
+      }  
   </script>
-  
 </html>
-
-
-
-
-
-
-
-
-
-
-
