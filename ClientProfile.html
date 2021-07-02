@@ -16,19 +16,23 @@
   <body>
     <section class="header">
       <nav>
-        <a href="index.html"><h1>Company Name/logo</h1></a>
+        <a href="home.html"><h1>Company Name/logo</h1></a>
         <div class="links">
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="FuelQuoteForm.html">Fuel Quote Form</a></li>
             <li><a href="history.html">Fuel Quote History</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Log Out</a></li>
             <li><a href="">Profile</a></li>
           </ul>
         </div>
       </nav>
       <!----client profile page---->
+      <script>
+        if(sessionStorage.getItem("AuthenState")===null){
+          window.location.href = "login.html";
+        }
+      </script>
       <div class="form-position">
         <div class="form-container">
           <div class="form-head">Profile Management</div>
