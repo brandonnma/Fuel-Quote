@@ -182,3 +182,52 @@ form .form-button input{
     outline: none;
     border-radius: 30px;
 }
+.home-content{
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #ffffff;
+}
+.home-content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+.home-content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+.home-button button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #d37f30;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.home-button span{
+    background: linear-gradient(to right, #aa212c,#ffad06);
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.home-button button:hover span{
+    width: 100%;
+}
+.home-button a{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 40px;
+}
