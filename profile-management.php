@@ -1,6 +1,6 @@
 <?php
-    require('class.php');
-    
+    require('index.php');
+
     if (isset($_POST['submit'])) {
         $name = $_POST['Fullname'];
         $address = $_POST['Address'];
