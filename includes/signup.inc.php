@@ -30,19 +30,21 @@
             
             // HERE IS THE CLASS IN WHICH THE BUYER SIGN UP DATA RECEIVES
             // SAVE THE VARIABLES AS POST FROM THE INPUT FORM, FROM ANOTHER CLASS
-            $username = $_POST['uname'];
-            $password = $_POST['upass'];
+            if(isset($_POST['submit'])) {
+                $username = $_POST['uname'];
+                $password = $_POST['upass'];
 
-            $sql = "INSERT INTO `user`(`uname`, `upass`) VALUES ('$username','$password');";
-            mysqli_query($conn, $sql);
+                $sql = "INSERT INTO `user`(`uname`, `upass`) VALUES ('$username','$password');";
+                mysqli_query($conn, $sql);
 
-            // AS THE THE DATA IS STORED IN THE TABLE AND EACH TABLE HAS ITS OWN ROW, SO THE IT CHECKS THE PER ROW PROPERTY
-            if(mysqli_affected_rows($conn) == 1) {
-                echo "<h2>Registration Successful!</h2>";
-                header('Refresh: 2; URL = ../login.html');
-            } else {
-                echo "<h2>Registration Failed!</h2>";
-                header('Refresh: 2; URL = ../register.html');
+                // AS THE THE DATA IS STORED IN THE TABLE AND EACH TABLE HAS ITS OWN ROW, SO THE IT CHECKS THE PER ROW PROPERTY
+                if(mysqli_affected_rows($conn) == 1) {
+                    echo "<h2>Registration Successful!</h2>";
+                    header('Refresh: 2; URL = ../views/login.html');
+                } else {
+                    echo "<h2>Registration Failed!</h2>";
+                    header('Refresh: 2; URL = ../views/register.html');
+                }
             }
         ?>
         </div>

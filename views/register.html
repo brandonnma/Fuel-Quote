@@ -27,10 +27,10 @@
     <div class="companyname">
       <h1>Company Name/logo</h1>
     </div>
-    <form id="Register" class="inputtabs">
-      <input type="text" class = "input-field" placeholder="User ID" required>
-      <input type="password" class = "input-field" placeholder="Password" required>
-      <button type = "submit" class= "submit-button">Register</button>
+    <form id="Register" class="inputtabs" action="../includes/signup.inc.php" method="post">
+      <input type="text" name="uname" class = "input-field" placeholder="User ID" required>
+      <input type="password" name="upass" class = "input-field" placeholder="Password" required>
+      <button type = "submit" name="submit" class= "submit-button">Register</button>
       <button type = "button" class= "submit-button"><a href="login.html">Already Have An Account?</a></button>
     </form>
   </div>

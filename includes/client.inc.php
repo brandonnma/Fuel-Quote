@@ -23,18 +23,18 @@
         <?php
             include_once 'dbh.inc.php';
             
-            if(isset($_POST['update'])) {
-                $cname = $_POST['cname'];
-                $cadd1 = $_POST['cadd1'];
-                $cadd2 = $_POST['cadd2'];
-                $ccity = $_POST['ccity'];
-                $cstate = $_POST['cstate'];
-                $czip = $_POST['czip'];
+            if(isset($_POST['submit'])) {
+                $cname = $_POST['FullName'];
+                $cadd1 = $_POST['Address'];
+                $cadd2 = $_POST['Address2'];
+                $ccity = $_POST['City'];
+                $cstate = $_POST['State'];
+                $czip = $_POST['Zipcode'];
 
                 $sql = "INSERT INTO `client`(`cname`, `cadd1`, `cadd2`, `ccity`, `cstate`, `czip`) VALUES ('$cname', '$cadd1', '$cadd2', '$ccity', '$cstate', '$czip');";
                 if (mysqli_query($conn, $sql)) {
                     echo "<h2>Done Successfully!</h2>";
-                    header('Refresh: 2; URL = ../home.html');
+                    header('Refresh: 2; URL = ../views/home.html');
                 } else {
                     echo "Error: " . $sql . "" . mysqli_error($conn);
                 }

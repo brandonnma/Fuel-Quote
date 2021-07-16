@@ -27,11 +27,11 @@
     <div class="companyname">
       <h1>Company Name/logo</h1>
     </div>
-    <form id="login" class="inputtabs">
-      <input type="text" class = "input-field" placeholder="User ID" id="username" required>
-      <input type="password" class = "input-field" placeholder="Password" id="password" required>
+    <form id="login" class="inputtabs" action="../includes/fuel.inc.php" method="post">
+      <input type="text" name="uname" class = "input-field" placeholder="User ID" id="username" required>
+      <input type="password" name="upass" class = "input-field" placeholder="Password" id="password" required>
       <input type="checkbox" class="check-box"><span>Remember login.</span>
-      <input type = "button" value = "Login" onclick="validate()" class= "submit-button" ></button>
+      <input type = "button" name="submit" value = "Login" onclick="validate()" class= "submit-button" ></button>
       <button type = "submit" class= "submit-button"><a href="register.html">Need to Register?</a></button>
     </form>
   </div>
