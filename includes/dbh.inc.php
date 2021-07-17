@@ -1,4 +1,3 @@
-<!-- This is the php connection class for database -->
 <?php
 
     // THERE IS THE CONNECTION OF DATABASE WITH FOUR FIELDS TO INITIALIZE THE SETUPS
@@ -14,4 +13,5 @@
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
+    
 ?>
