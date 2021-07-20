@@ -10,15 +10,16 @@ class UnitTest extends TestCase {
     public function testProfileManagement() {
         require('includes/client.inc.php');
 
-        $cname = "random name";
-        $cadd1 = "123 some street dr.";
-        $cadd2 = "";
-        $ccity = "Houston";
-        $cstate = "TX";
-        $czip = "77000";   
+        $_POST = ['submit' => 'true', 
+                'FullName' => 'Test Name', 
+                'Address' => '123 some street dr.', 
+                'Address2' => '', 
+                'City' => 'Houston', 
+                'State' => 'TX', 
+                'Zipcode' => '77000'];
 
         $testProfileObject = new profile;
-        $this->assertEquals(True, $testProfileObject->profileManagement($cname, $cadd1, $cadd2, $ccity, $cstate, $czip));
+        $this->assertEquals(True, $testProfileObject->profileManagement($_POST));
     }
 
     /**
@@ -27,11 +28,12 @@ class UnitTest extends TestCase {
     public function testFuelForm() {
         require('includes/fuel.inc.php');
 
-        $greq = "123"; 
-        $gdate = "12/12/1212";
+        $_POST = ['submit' => 'true', 
+                'GallonsRequested' => '10', 
+                'Date' => '01/01/2021'];
 
         $testFuelObject = new fuel;
-        $this->assertEquals(True, $testFuelObject->fuelQuoteForm($greq, $gdate));
+        $this->assertEquals(True, $testFuelObject->fuelQuoteForm($_POST));
     }
 
     /**
@@ -40,11 +42,12 @@ class UnitTest extends TestCase {
     public function testLoginForm() {
         require('includes/signin.inc.php');
 
-        $username = "user"; 
-        $password = "pass";
+        $_POST = ['submit' => 'true', 
+                'uname' => 'user', 
+                'upass' => 'pass'];
 
         $testLoginObject = new login;
-        $this->assertEquals(True, $testLoginObject->loginForm($username, $password));
+        $this->assertEquals(True, $testLoginObject->loginForm($_POST));
     }
 
     /**
@@ -53,11 +56,12 @@ class UnitTest extends TestCase {
     public function testRegisterForm() {
         require('includes/signup.inc.php');
 
-        $username = "user"; 
-        $password = "pass";
+        $_POST = ['submit' => 'true', 
+                'uname' => 'user', 
+                'upass' => 'pass'];
 
         $testRegisterObject = new register;
-        $this->assertEquals(True, $testRegisterObject->registerForm($username, $password));
+        $this->assertEquals(True, $testRegisterObject->registerForm($_POST));
     }
 
     /**

@@ -1,16 +1,15 @@
 <?php
 
-    if(isset($_POST['submit'])) {
-        $greq = $_POST['GallonsRequested'];
-        //$gadd = $_POST['gadd'];
-        $gdate = $_POST['Date'];
-        //$gprice = $_POST['gprice'];
-        //$gamt = $_POST['gamt'];
-    }
-    header('Refresh: 2; URL = ../views/home.html');
-
     class fuel {
-        function fuelQuoteForm($greq, $gdate) {
+        function fuelQuoteForm(array $request) {
+            if(isset($_POST['submit'])) {
+                $greq = $_POST['GallonsRequested'];
+                //$gadd = $_POST['gadd'];
+                $gdate = $_POST['Date'];
+                //$gprice = $_POST['gprice'];
+                //$gamt = $_POST['gamt'];
+            }
+
             require('dbh.inc.php');
 
             //$sql = "INSERT INTO `fuel`(`greq`, `gadd`, `gdate`, `gprice`, `gamt`) VALUES ('$greq', '$gadd', '$gdate', '$gprice', '$gamt');";
@@ -20,10 +19,16 @@
                 header('Refresh: 2; URL = ../views/home.html');
                 $testValue = True;
             } else {
-                //echo "Error: " . $sql . "" . mysqli_error($conn);
+                echo "Error: " . $sql . "" . mysqli_error($conn);
             }
             mysqli_close($conn);
             return $testValue; 
         }
     }
+
+    if(isset($_POST['submit'])) {
+        $fuelDataObject = new fuel;
+        $fuelDataObject->fuelQuoteForm($_POST);
+    }
+
 ?>
