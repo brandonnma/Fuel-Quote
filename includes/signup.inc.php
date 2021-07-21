@@ -12,7 +12,7 @@
             // NOW INCLUDES THE CONNECTION CLASS
             include_once 'dbh.inc.php';
 
-            $sql = "INSERT INTO `user`(`uname`, `upass`) VALUES ('$username','$password');";
+            $sql = "INSERT INTO `usercredentials`(`uname`, `upass`) VALUES ('$username','$password');";
             mysqli_query($conn, $sql);
 
             // AS THE THE DATA IS STORED IN THE TABLE AND EACH TABLE HAS ITS OWN ROW, SO THE IT CHECKS THE PER ROW PROPERTY
