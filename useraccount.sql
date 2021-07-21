@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `client`
+-- Table structure for table `clientinformation`
 --
 
-CREATE TABLE `client` (
+CREATE TABLE `clientinformation` (
   `cid` int(11) NOT NULL,
   `cname` int(255) NOT NULL,
   `cadd1` int(255) NOT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE `client` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `client`
+-- Dumping data for table `clientinformation`
 --
 
-INSERT INTO `client` (`cid`, `cname`, `cadd1`, `cadd2`, `ccity`, `cstate`, `czip`) VALUES
+INSERT INTO `clientinformation` (`cid`, `cname`, `cadd1`, `cadd2`, `ccity`, `cstate`, `czip`) VALUES
 (1, 0, 0, 0, 0, 0, 23423),
 (2, 0, 0, 0, 0, 0, 23423),
 (3, 0, 0, 0, 0, 0, 23423);
@@ -49,10 +49,10 @@ INSERT INTO `client` (`cid`, `cname`, `cadd1`, `cadd2`, `ccity`, `cstate`, `czip
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fuel`
+-- Table structure for table `fuelquote`
 --
 
-CREATE TABLE `fuel` (
+CREATE TABLE `fuelquote` (
   `gid` int(11) NOT NULL,
   `greq` int(11) NOT NULL,
   `gadd` varchar(255) NOT NULL,
@@ -62,29 +62,29 @@ CREATE TABLE `fuel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `fuel`
+-- Dumping data for table `fuelquote`
 --
 
-INSERT INTO `fuel` (`gid`, `greq`, `gadd`, `gdate`, `gprice`, `gamt`) VALUES
+INSERT INTO `fuelquote` (`gid`, `greq`, `gadd`, `gdate`, `gprice`, `gamt`) VALUES
 (1, 12, 'abcd efgh ijkl', '2021-07-29', 23, 32423);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `usercredentials`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `usercredentials` (
   `uid` int(11) NOT NULL,
   `uname` varchar(255) NOT NULL,
   `upass` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `usercredentials`
 --
 
-INSERT INTO `user` (`uid`, `uname`, `upass`) VALUES
+INSERT INTO `usercredentials` (`uid`, `uname`, `upass`) VALUES
 (2, 'test1', 'abcd1234');
 
 --
@@ -92,21 +92,21 @@ INSERT INTO `user` (`uid`, `uname`, `upass`) VALUES
 --
 
 --
--- Indexes for table `client`
+-- Indexes for table `clientinformation`
 --
-ALTER TABLE `client`
+ALTER TABLE `clientinformation`
   ADD PRIMARY KEY (`cid`);
 
 --
--- Indexes for table `fuel`
+-- Indexes for table `fuelquote`
 --
-ALTER TABLE `fuel`
+ALTER TABLE `fuelquote`
   ADD PRIMARY KEY (`gid`);
 
 --
--- Indexes for table `user`
+-- Indexes for table `usercredentials`
 --
-ALTER TABLE `user`
+ALTER TABLE `usercredentials`
   ADD PRIMARY KEY (`uid`),
   ADD UNIQUE KEY `uname` (`uname`);
 
@@ -115,21 +115,21 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `client`
+-- AUTO_INCREMENT for table `clientinformation`
 --
-ALTER TABLE `client`
+ALTER TABLE `clientinformation`
   MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `fuel`
+-- AUTO_INCREMENT for table `fuelquote`
 --
-ALTER TABLE `fuel`
+ALTER TABLE `fuelquote`
   MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `usercredentials`
 --
-ALTER TABLE `user`
+ALTER TABLE `usercredentials`
   MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
