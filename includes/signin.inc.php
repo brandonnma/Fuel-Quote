@@ -35,13 +35,13 @@
             
                 // PRINTS THE USERNAME AND REDIRECTS TO THE BUYER PAGE OF INDEX.HTML
                 echo "<h2>Welcome " . $_POST['uname'] . " ✌</h2>";
-                header('Refresh: 2; URL = ../ClientProfile.html');
+                header('Refresh: 2; URL = ../ClientProfile.php');
                 $testValue = True;
 
             // OTHERWISE IT PRINTS SIGN IN FAILED AND REDIRECTS THE PAGE TO SIGN IN PAGE
             } else {
                 echo "<h2>Sign in Failed! Type username or password correctly.</h2>";
-                header('Refresh: 2; URL = ../login.html');
+                header('Refresh: 2; URL = ../login.php');
                 $testValue = True;
             }
             return $testValue;

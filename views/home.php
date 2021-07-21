@@ -20,24 +20,24 @@
         <div class="links">
           <ul>
             <li><a href="">Home</a></li>
-            <li><a href="FuelQuoteForm.html">Fuel Quote Form</a></li>
-            <li><a href="history.html">Fuel Quote History</a></li>
-            <li><a href="login.html">Log Out</a></li>
-            <li><a href="ClientProfile.html">Profile</a></li>
+            <li><a href="FuelQuoteForm.php">Fuel Quote Form</a></li>
+            <li><a href="history.php">Fuel Quote History</a></li>
+            <li><a href="login.php">Log Out</a></li>
+            <li><a href="ClientProfile.php">Profile</a></li>
           </ul>
         </div>
       </nav>
       <!----Home page---->
       <script>
         if(sessionStorage.getItem("AuthenState")===null){
-          window.location.href = "login.html";
+          window.location.href = "login.php";
         }
       </script>
       <div class="home-content">
         <h1>WELCOME</h1>
         <p>We make your fuel purchasing simple, fast, and efficient.</p>
         <div class="home-button">
-          <button type="button"><a href="FuelQuoteForm.html"><span></span>GET STARTED</a></button>
+          <button type="button"><a href="FuelQuoteForm.php"><span></span>GET STARTED</a></button>
         </div>
       </div>
     </section>

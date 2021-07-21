@@ -16,8 +16,8 @@
             <!---<a href="index.html"><h1>Company Name/logo</h1></a>--->
                 <div class="links">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="login.html">Login</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="login.php">Login</a></li>
                         <li><a href="">Register</a></li>
                     </ul>
                 </div>
@@ -31,7 +31,7 @@
       <input type="text" name="uname" class = "input-field" placeholder="User ID" required>
       <input type="password" name="upass" class = "input-field" placeholder="Password" required>
       <button type = "submit" name="submit" class= "submit-button">Register</button>
-      <button type = "button" class= "submit-button"><a href="login.html">Already Have An Account?</a></button>
+      <button type = "button" class= "submit-button"><a href="login.php">Already Have An Account?</a></button>
     </form>
   </div>
       </section>

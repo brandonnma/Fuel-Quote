@@ -16,7 +16,7 @@
             $sql = "INSERT INTO `clientinformation`(`cname`, `cadd1`, `cadd2`, `ccity`, `cstate`, `czip`) VALUES ('$cname', '$cadd1', '$cadd2', '$ccity', '$cstate', '$czip');";
             if (mysqli_query($conn, $sql)) {
                 echo "<h2>Done Successfully!</h2>";
-                header('Refresh: 2; URL = ../views/home.html');
+                header('Refresh: 2; URL = ../views/home.php');
                 $testValue = True;
             } else {
                 echo "Error: " . $sql . "" . mysqli_error($conn);

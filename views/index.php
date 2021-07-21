@@ -20,8 +20,8 @@
         <div class="links">
           <ul>
             <li><a href="">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="register.php">Register</a></li>
           </ul>
         </div>
       </nav>
@@ -30,7 +30,7 @@
         <h1>WELCOME</h1>
         <p>We make your fuel purchasing simple, fast, and efficient.</p>
         <div class="home-button">
-          <button type="button"><a href="login.html"><span></span>GET STARTED</a></button>
+          <button type="button"><a href="login.php"><span></span>GET STARTED</a></button>
         </div>
       </div>
     </section>

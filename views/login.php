@@ -16,9 +16,9 @@
             <!---<a href="index.html"><h1>Company Name/logo</h1></a>--->
                 <div class="links">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
+                        <li><a href="register.php">Register</a></li>
                     </ul>
                 </div>
             </nav>
@@ -32,7 +32,7 @@
       <input type="password" name="upass" class = "input-field" placeholder="Password" id="password" required>
       <input type="checkbox" class="check-box"><span>Remember login.</span>
       <input type = "button" name="submit" value = "Login" onclick="validate()" class= "submit-button" ></button>
-      <button type = "submit" class= "submit-button"><a href="register.html">Need to Register?</a></button>
+      <button type = "submit" class= "submit-button"><a href="register.php">Need to Register?</a></button>
     </form>
   </div>
     </section>
@@ -46,7 +46,7 @@
             password = "";
             sessionStorage.setItem("AuthenState","Authen");
             alert("You have successfully logged in.");
-            window.location.href="ClientProfile.html";
+            window.location.href="ClientProfile.php";
             return false;
         } else {
             alert("Wrong username and/or password");

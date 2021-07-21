@@ -19,10 +19,10 @@
         <!---<a href="home.html"><h1>Company Name/logo</h1></a>--->
         <div class="links">
           <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="FuelQuoteForm.html">Fuel Quote Form</a></li>
-            <li><a href="history.html">Fuel Quote History</a></li>
-            <li><a href="login.html">Log Out</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="FuelQuoteForm.php">Fuel Quote Form</a></li>
+            <li><a href="history.php">Fuel Quote History</a></li>
+            <li><a href="login.php">Log Out</a></li>
             <li><a href="">Profile</a></li>
           </ul>
         </div>
@@ -30,7 +30,7 @@
       <!----client profile page---->
       <script>
         if(sessionStorage.getItem("AuthenState")===null){
-          window.location.href = "login.html";
+          window.location.href = "login.php";
         }
       </script>
       <div class="form-position">

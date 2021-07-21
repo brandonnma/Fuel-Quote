@@ -18,11 +18,11 @@
             // AS THE THE DATA IS STORED IN THE TABLE AND EACH TABLE HAS ITS OWN ROW, SO THE IT CHECKS THE PER ROW PROPERTY
             if(mysqli_affected_rows($conn) == 1) {
                 echo "<h2>Registration Successful!</h2>";
-                header('Refresh: 2; URL = ../views/login.html');
+                header('Refresh: 2; URL = ../views/login.php');
                 $testValue = True;
             } else {
                 echo "<h2>Registration Failed!</h2>";
-                header('Refresh: 2; URL = ../views/register.html');
+                header('Refresh: 2; URL = ../views/register.php');
                 $testValue = True;
             }
             return $testValue;
