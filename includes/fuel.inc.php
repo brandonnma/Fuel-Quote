@@ -12,8 +12,8 @@
 
             require('dbh.inc.php');
 
-            //$sql = "INSERT INTO `fuel`(`greq`, `gadd`, `gdate`, `gprice`, `gamt`) VALUES ('$greq', '$gadd', '$gdate', '$gprice', '$gamt');";
-            $sql = "INSERT INTO `fuel`(`greq`, `gdate`) VALUES ('$greq', '$gdate');";
+            //$sql = "INSERT INTO `fuelquote`(`greq`, `gadd`, `gdate`, `gprice`, `gamt`) VALUES ('$greq', '$gadd', '$gdate', '$gprice', '$gamt');";
+            $sql = "INSERT INTO `fuelquote`(`greq`, `gdate`) VALUES ('$greq', '$gdate');";
             if (mysqli_query($conn, $sql)) {
                 echo "<h2>Done Successfully!</h2>";
                 header('Refresh: 2; URL = ../views/home.html');
