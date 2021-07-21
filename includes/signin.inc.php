@@ -19,7 +19,7 @@
             $dbPassword = "";
 
             // NOW FETCH THE ROW DATA USING SELECT QUERY OF MYSQL, WHERE THE BUYER SIGN INS
-            $sql = "SELECT * FROM `user` WHERE uname='$username' and upass='$password'";
+            $sql = "SELECT * FROM `usercredentials` WHERE uname='$username' and upass='$password'";
 
             // SAVE THE RESULT IN THE MYSQLI QUERY METHOD
             $result = mysqli_query($conn, $sql);
