@@ -39,46 +39,43 @@
       <div class="form-position">
         <div class="form-container">
           <div class="form-head">"Client's Name's" Quotes Hisory</div>
-            <table class="history-table">
-              <thead>
-                <tr>
-                  <th>Client ID</th>
-                  <th>Gallons Requested</th>
-                  <th>Delivery Address</th>
-                  <th>Delivery Date</th>
-                  <th>Suggested Price</th>
-                  <th>Total Amount Due</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>4800 Calhoun Rd, Houston, TX 77004</td>
-                  <td>01/01/2021</td>
-                  <td>$10</td>
-                  <td>$20</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>3</td>
-                  <td>4800 Calhoun Rd, Houston, TX 77004</td>
-                  <td>01/01/2021</td>
-                  <td>$10</td>
-                  <td>$30</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>4</td>
-                  <td>4800 Calhoun Rd, Houston, TX 77004</td>
-                  <td>01/01/2021</td>
-                  <td>$10</td>
-                  <td>$40</td>
-                </tr>
-              </tbody>
-            </table>
+          <?php
+            include_once '../includes/dbh.inc.php';
+
+            $sql = "SELECT `gid`, `greq`, `gadd`, `gdate`, `gprice`, `gamt` FROM `fuelquote`;";
+            $result = mysqli_query($conn, $sql);
+            if ($result) {
+                echo "<table>
+                    <tr>
+                        <th>Client ID</th>
+                        <th>Gallons Requested</th>
+                        <th>Delivery Address</th>
+                        <th>Delivery Date</th>
+                        <th>Suggested Price</th>
+                        <th>Total Amount Due</th>
+                    </tr>";
+                
+                while($row = mysqli_fetch_array($result)) {
+                    echo "<tr>";
+                        echo "<td>" . $row['gid'] . "</td>";
+                        echo "<td>" . $row['greq'] . "</td>";
+                        echo "<td>" . $row['gadd'] . "</td>";
+                        echo "<td>" . $row['gdate'] . "</td>";
+                        echo "<td>$" . $row['gprice'] . "</td>";
+                        echo "<td>$" . $row['gamt'] . "</td>";
+                    echo "</tr>";
+                }
+
+                echo "</table>";
+            } else {
+                echo "Error: " . $sql . "" . mysqli_error($conn);
+            }
+            
+            mysqli_close($conn);    
+        ?>
         </div>
       </div>
     </section>
   </body>
 </html>
+
