@@ -47,7 +47,7 @@
       <div class="form-position">
         <div class="form-container">
           <div class="form-head">Profile Management</div>
-          <form action="../includes/client.inc.php" method="post">
+          <form action="#" method="post">
             <div class="request-detail">
               <div class="input-box">
                 <div class="request">Full Name:</div>

@@ -47,7 +47,7 @@
       <div class="form-position">
         <div class="form-container">
           <div class="form-head">Fuel Quote Form</div>
-          <form action="../includes/fuel.inc.php" method="post">
+          <form action="#" method="post">
             <div class="request-detail">
               <div class="input-box">
                 <div class="request">Gallons Requested:</div>
