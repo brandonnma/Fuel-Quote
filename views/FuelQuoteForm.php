@@ -36,42 +36,34 @@
         </div>
       </nav>
       <!----Form Page---->
-      <?php
-        require('../includes/fuel.inc.php');
-
-        if(isset($_POST['submit'])) {
-          $fuelDataObject = new fuel;
-          $fuelDataObject->fuelQuoteForm($_POST);
-        }
-      ?>
       <div class="form-position">
         <div class="form-container">
           <div class="form-head">Fuel Quote Form</div>
-          <form action="#" method="post">
+          <form action="../includes/fuel.inc.php" method="POST">
             <div class="request-detail">
               <div class="input-box">
                 <div class="request">Gallons Requested:</div>
-                <input type="number" name="GallonsRequested" min="0" placeholder="Enter gallons requested" required/>
+                <input type="number" min="0" placeholder="Enter gallons requested" name="greq" required/>
               </div>
               <div class="input-box">
                 <div class="request">Delivery Address:</div>
-                <input type="text" readonly />
+                <input type="text" name="gadd" />
               </div>
               <div class="input-box">
                 <div class="request">Delivery Date:</div>
-                <input type="Date" name="Date"/>
+                <input type="Date" name="gdate" />
               </div>
               <div class="input-box">
                 <div class="request">Suggested Price Per Gallon:</div>
-                <input type="number" readonly />
+                <input type="number" name="gprice" />
               </div>
               <div class="input-box">
                 <div class="request">Total Amount Due:</div>
-                <input type="number" readonly />
+                <input type="number" name="gamt" />
               </div>
             </div>
             <div class="form-button">
-              <input type="submit" name="submit" value="Submit" />
+              <input type="submit" value="Submit" name="save"/>
             </div>
           </form>
         </div>
@@ -79,3 +71,4 @@
     </section>
   </body>
 </html>
+
