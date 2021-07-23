@@ -23,11 +23,19 @@
                 </div>
             </nav>
 <!-------Registration Page-------->
+    <?php
+      require('../includes/signup.inc.php');
+
+      if(isset($_POST['submit'])) {
+        $registerDataObject = new register;
+        $registerDataObject->registerForm($_POST);
+      }
+    ?>
   <div class="form-box">
     <div class="companyname">
       <h1>Company Name/logo</h1>
     </div>
-    <form id="Register" class="inputtabs" action="../includes/signup.inc.php" method="post">
+    <form id="Register" class="inputtabs" action="#" method="post">
       <input type="text" name="uname" class = "input-field" placeholder="User ID" required>
       <input type="password" name="upass" class = "input-field" placeholder="Password" required>
       <button type = "submit" name="submit" class= "submit-button">Register</button>
