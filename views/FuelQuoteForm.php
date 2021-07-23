@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['loggedin'])) {
+    header('Location: login.php');
+    exit;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,11 +36,6 @@
         </div>
       </nav>
       <!----Form Page---->
-      <script>
-        if(sessionStorage.getItem("AuthenState")===null){
-          window.location.href = "login.php";
-        }
-      </script>
       <div class="form-position">
         <div class="form-container">
           <div class="form-head">Fuel Quote Form</div>

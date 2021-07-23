@@ -39,16 +39,47 @@ class UnitTest extends TestCase {
     /**
      * @runInSeparateProcess
      */
-    /*public function testLoginForm() {
+    public function testLoginForm() {
         require('includes/signin.inc.php');
 
         $_POST = ['submit' => 'true', 
-                'uname' => 'user', 
-                'upass' => 'pass'];
+                'uname' => 'testuser1', 
+                'upass' => 'testpass1'];
 
         $testLoginObject = new login;
-        $this->assertEquals(True, $testLoginObject->loginForm($_POST));
-    }*/
+        $testLoginObject->loginForm($_POST);
+        $this->expectOutputString('<script>alert("Successfully Logged In")</script>');
+    }
+
+    /**
+     * @runInSeparateProcess
+     */
+    public function testLoginFormEmptyUsername() {
+        require('includes/signin.inc.php');
+
+        $_POST = ['submit' => 'true', 
+                'uname' => '', 
+                'upass' => ''];
+
+        $testLoginObject = new login;
+        $testLoginObject->loginForm($_POST);
+        $this->expectOutputString('<script>alert("Please enter a username!")</script>');
+    }
+
+    /**
+     * @runInSeparateProcess
+     */
+    public function testLoginFormIncorrectLogin() {
+        require('includes/signin.inc.php');
+
+        $_POST = ['submit' => 'true', 
+                'uname' => 'qwsdefgsfdgs', 
+                'upass' => 'dfasdfsadf'];
+
+        $testLoginObject = new login;
+        $testLoginObject->loginForm($_POST);
+        $this->expectOutputString('<script>alert("Your Username or Password is incorrect!")</script>');
+    }
 
     /**
      * @runInSeparateProcess

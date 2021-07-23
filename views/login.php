@@ -23,34 +23,26 @@
                 </div>
             </nav>
 <!-------Login Page-------->
+  <?php
+    require('../includes/signin.inc.php');
+
+    if(isset($_POST['submit'])) {
+      $loginDataObject = new login;
+      $loginDataObject->loginForm($_POST);
+    }
+  ?>
   <div class="form-box">
     <div class="companyname">
       <h1>Company Name/logo</h1>
     </div>
-    <form id="login" class="inputtabs" action="../includes/fuel.inc.php" method="post">
-      <input type="text" name="uname" class = "input-field" placeholder="User ID" id="username" required>
+    <form id="login" class="inputtabs" action="#" method="post">
+      <input type="text" name="uname" class = "input-field" placeholder="Username" id="username" required>
       <input type="password" name="upass" class = "input-field" placeholder="Password" id="password" required>
       <input type="checkbox" class="check-box"><span>Remember login.</span>
-      <input type = "button" name="submit" value = "Login" onclick="validate()" class= "submit-button" ></button>
+      <button type = "submit" name="submit" class= "submit-button" >Login</button>
       <button type = "submit" class= "submit-button"><a href="register.php">Need to Register?</a></button>
     </form>
   </div>
     </section>
   </body>
-  <script>
-        function validate(){
-          var username = document.getElementById("username").value;
-          var password = document.getElementById("password").value;
-          if (username === "user" && password === "pass") {
-            username = "";
-            password = "";
-            sessionStorage.setItem("AuthenState","Authen");
-            alert("You have successfully logged in.");
-            window.location.href="ClientProfile.php";
-            return false;
-        } else {
-            alert("Wrong username and/or password");
-        }
-      }  
-  </script>
 </html>

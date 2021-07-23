@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['loggedin'])) {
+    header('Location: login.php');
+    exit;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,11 +36,6 @@
         </div>
       </nav>
       <!----Home page---->
-      <script>
-        if(sessionStorage.getItem("AuthenState")===null){
-          window.location.href = "login.php";
-        }
-      </script>
       <div class="home-content">
         <h1>WELCOME</h1>
         <p>We make your fuel purchasing simple, fast, and efficient.</p>
