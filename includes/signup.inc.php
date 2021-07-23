@@ -23,6 +23,8 @@
                         $error = true;
                     }
                 }
+                //Encrypt the password using md5
+                $password = password_hash($password,PASSWORD_DEFAULT);
             }
 
             if(!$error == true) {
