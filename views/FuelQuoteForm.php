@@ -36,6 +36,14 @@
         </div>
       </nav>
       <!----Form Page---->
+      <?php
+        require('../includes/fuel.inc.php');
+
+        if(isset($_POST['submit'])) {
+          $fuelDataObject = new fuel;
+          $fuelDataObject->fuelQuoteForm($_POST);
+        }
+      ?>
       <div class="form-position">
         <div class="form-container">
           <div class="form-head">Fuel Quote Form</div>

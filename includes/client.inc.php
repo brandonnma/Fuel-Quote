@@ -15,21 +15,13 @@
 
             $sql = "INSERT INTO `clientinformation`(`cname`, `cadd1`, `cadd2`, `ccity`, `cstate`, `czip`) VALUES ('$cname', '$cadd1', '$cadd2', '$ccity', '$cstate', '$czip');";
             if (mysqli_query($conn, $sql)) {
-                echo "<h2>Done Successfully!</h2>";
-                header('Refresh: 2; URL = ../views/home.php');
-                $testValue = True;
+                echo '<script>alert("Done Successfully")</script>';
+                header('Refresh: 0; URL = ../views/home.php');
             } else {
                 echo "Error: " . $sql . "" . mysqli_error($conn);
             }
             mysqli_close($conn);
-            return $testValue;
         }
     }
 
-    if(isset($_POST['submit'])) {
-        $profileDataObject = new profile;
-        $profileDataObject->profileManagement($_POST);
-    }
-
 ?>
-

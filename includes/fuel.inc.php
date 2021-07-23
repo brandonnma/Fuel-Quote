@@ -15,20 +15,13 @@
             //$sql = "INSERT INTO `fuelquote`(`greq`, `gadd`, `gdate`, `gprice`, `gamt`) VALUES ('$greq', '$gadd', '$gdate', '$gprice', '$gamt');";
             $sql = "INSERT INTO `fuelquote`(`greq`, `gdate`) VALUES ('$greq', '$gdate');";
             if (mysqli_query($conn, $sql)) {
-                echo "<h2>Done Successfully!</h2>";
-                header('Refresh: 2; URL = ../views/home.php');
-                $testValue = True;
+                echo '<script>alert("Done Successfully")</script>';
+                header('Refresh: 0; URL = ../views/home.php');
             } else {
                 echo "Error: " . $sql . "" . mysqli_error($conn);
             }
             mysqli_close($conn);
-            return $testValue; 
         }
-    }
-
-    if(isset($_POST['submit'])) {
-        $fuelDataObject = new fuel;
-        $fuelDataObject->fuelQuoteForm($_POST);
     }
 
 ?>

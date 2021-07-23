@@ -36,6 +36,14 @@
         </div>
       </nav>
       <!----client profile page---->
+      <?php
+        require('../includes/client.inc.php');
+
+        if(isset($_POST['submit'])) {
+          $profileDataObject = new profile;
+          $profileDataObject->profileManagement($_POST);
+      }
+      ?>
       <div class="form-position">
         <div class="form-container">
           <div class="form-head">Profile Management</div>

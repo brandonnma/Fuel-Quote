@@ -7,7 +7,7 @@ class UnitTest extends TestCase {
     /**
      * @runInSeparateProcess
      */
-    /*public function testProfileManagement() {
+    public function testProfileManagement() {
         require('includes/client.inc.php');
 
         $_POST = ['submit' => 'true', 
@@ -19,13 +19,14 @@ class UnitTest extends TestCase {
                 'Zipcode' => '77000'];
 
         $testProfileObject = new profile;
-        $this->assertEquals(True, $testProfileObject->profileManagement($_POST));
-    }*/
+        $testProfileObject->profileManagement($_POST);
+        $this->expectOutputString('<script>alert("Done Successfully")</script>');
+    }
 
     /**
      * @runInSeparateProcess
      */
-    /*public function testFuelForm() {
+    public function testFuelForm() {
         require('includes/fuel.inc.php');
 
         $_POST = ['submit' => 'true', 
@@ -33,8 +34,9 @@ class UnitTest extends TestCase {
                 'Date' => '01/01/2021'];
 
         $testFuelObject = new fuel;
-        $this->assertEquals(True, $testFuelObject->fuelQuoteForm($_POST));
-    }*/
+        $testFuelObject->fuelQuoteForm($_POST);
+        $this->expectOutputString('<script>alert("Done Successfully")</script>');
+    }
 
     /**
      * @runInSeparateProcess
@@ -133,26 +135,26 @@ class UnitTest extends TestCase {
     /**
      * @runInSeparateProcess
      */
-    /*public function testPricingModule() {
+    public function testPricingModule() {
         require('includes/pricing.inc.php');
 
         $GallonsRequested = "123";
 
         $testPricingObject = new PricingMod;
         $this->assertEquals(True, $testPricingObject->setGallons($GallonsRequested));
-    }*/
+    }
 
     /**
      * @runInSeparateProcess
      */
-    /*public function testPricingModule2() {
+    public function testPricingModule2() {
         require('includes/pricing.inc.php');
 
         $GallonsRequested = "0";
 
         $testPricingObject = new PricingMod;
         $this->assertEquals(0, $testPricingObject->getGallons($GallonsRequested));
-    }*/
+    }
 }
 
 ?>
