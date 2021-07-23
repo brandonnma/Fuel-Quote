@@ -23,7 +23,7 @@
                         $error = true;
                     }
                 }
-                //Encrypt the password using md5
+                //Encrypt the password using hashing
                 $password = password_hash($password,PASSWORD_DEFAULT);
             }
 
