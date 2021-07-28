@@ -27,6 +27,7 @@
                     if(password_verify($password,$rows['upass'])) {
                         session_regenerate_id();
                         $_SESSION['loggedin'] = true;
+                        $_SESSION["ID_check"] = $rows['uid'];
                         echo '<script>alert("Successfully Logged In")</script>';
                         header('Refresh: 0; URL = ../views/ClientProfile.php');
                     }

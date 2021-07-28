@@ -36,22 +36,39 @@
         </div>
       </nav>
       <!----Form Page---->
+      <?php
+        require('../includes/fuel.inc.php');
+
+        if(isset($_POST['submit'])) {
+          $fuelDataObject = new fuel;
+          $fuelDataObject->fuelQuoteForm($_POST);
+        }
+      ?>
       <div class="form-position">
         <div class="form-container">
           <div class="form-head">Fuel Quote Form</div>
-          <form action="../includes/fuel.inc.php" method="POST">
+          <?php
+            require('../includes/dbh.inc.php');
+            $cid = $_SESSION["ID_check"];
+
+            $sql = "SELECT * FROM `clientinformation` WHERE cid='$cid'";
+            $result = mysqli_query($conn, $sql);
+            if($result) {
+              while($row = mysqli_fetch_array($result)) {
+          ?>
+          <form action="#" method="POST">
             <div class="request-detail">
               <div class="input-box">
                 <div class="request">Gallons Requested:</div>
-                <input type="number" min="0" placeholder="Enter gallons requested" name="greq" required/>
+                <input type="number" min="0" placeholder="Enter gallons requested" name="GallonsRequested" required/>
               </div>
               <div class="input-box">
                 <div class="request">Delivery Address:</div>
-                <input type="text" name="gadd" />
+                <input type="text" name="gadd" value="<?php echo $row['cadd1']; ?>" readonly />
               </div>
               <div class="input-box">
                 <div class="request">Delivery Date:</div>
-                <input type="Date" name="gdate" />
+                <input type="Date" name="Date" />
               </div>
               <div class="input-box">
                 <div class="request">Suggested Price Per Gallon:</div>
@@ -63,9 +80,18 @@
               </div>
             </div>
             <div class="form-button">
-              <input type="submit" value="Submit" name="save"/>
+              <input type="submit" value="Submit" name="submit"/>
             </div>
           </form>
+          <?php
+              }
+            } 
+            else {
+              echo "Error: " . $sql . "" . mysqli_error($conn);
+            }
+            
+            mysqli_close($conn); 
+          ?>
         </div>
       </div>
     </section>

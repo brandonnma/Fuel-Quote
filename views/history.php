@@ -39,40 +39,44 @@
       <div class="form-position">
         <div class="form-container">
           <div class="form-head">"Client's Name's" Quotes Hisory</div>
-          <?php
-            include_once '../includes/dbh.inc.php';
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>Client ID</th>
+                  <th>Gallons Requested</th>
+                  <th>Delivery Address</th>
+                  <th>Delivery Date</th>
+                  <th>Suggested Price</th>
+                  <th>Total Amount Due</th>
+                </tr>
+              </thead>
+              <?php
+                include_once '../includes/dbh.inc.php';
+                $qid = $_SESSION["ID_check"];
 
-            $sql = "SELECT `gid`, `greq`, `gadd`, `gdate`, `gprice`, `gamt` FROM `fuelquote`;";
-            $result = mysqli_query($conn, $sql);
-            if ($result) {
-                echo "<table>
-                    <tr>
-                        <th>Client ID</th>
-                        <th>Gallons Requested</th>
-                        <th>Delivery Address</th>
-                        <th>Delivery Date</th>
-                        <th>Suggested Price</th>
-                        <th>Total Amount Due</th>
-                    </tr>";
-                
-                while($row = mysqli_fetch_array($result)) {
-                    echo "<tr>";
-                        echo "<td>" . $row['gid'] . "</td>";
-                        echo "<td>" . $row['greq'] . "</td>";
-                        echo "<td>" . $row['gadd'] . "</td>";
-                        echo "<td>" . $row['gdate'] . "</td>";
-                        echo "<td>$" . $row['gprice'] . "</td>";
-                        echo "<td>$" . $row['gamt'] . "</td>";
-                    echo "</tr>";
+                $sql = "SELECT * FROM `fuelquote` WHERE qid='$qid'";
+                $result = mysqli_query($conn, $sql);
+                if ($result) {
+                    echo "<tbody>";
+                    while($row = mysqli_fetch_array($result)) {
+                        echo "<tr>";
+                            echo "<td>" . $row['qid'] . "</td>";
+                            echo "<td>" . $row['qreq'] . "</td>";
+                            echo "<td>" . $row['qadd'] . "</td>";
+                            echo "<td>" . $row['qdate'] . "</td>";
+                            echo "<td>$" . $row['qprice'] . "</td>";
+                            echo "<td>$" . $row['qamt'] . "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</tbody>";
+                } else {
+                    echo "Error: " . $sql . "" . mysqli_error($conn);
                 }
-
-                echo "</table>";
-            } else {
-                echo "Error: " . $sql . "" . mysqli_error($conn);
-            }
-            
-            mysqli_close($conn);    
-        ?>
+                
+                mysqli_close($conn);    
+              ?>
+            </table>
+          </div>
         </div>
       </div>
     </section>
