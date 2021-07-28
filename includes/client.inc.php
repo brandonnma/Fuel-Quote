@@ -29,7 +29,7 @@
                 mysqli_close($conn);
             }
             else {
-                $sql = "UPDATE `clientinformation` SET cid='$cid', cname='$cname', cadd1='$cadd1', cadd2='$cadd2', ccity='$ccity', cstate='$cstate', czip='$czip';";
+                $sql = "UPDATE `clientinformation` SET cid='$cid', cname='$cname', cadd1='$cadd1', cadd2='$cadd2', ccity='$ccity', cstate='$cstate', czip='$czip' WHERE cid='$cid';";
                 if (mysqli_query($conn, $sql)) {
                     echo '<script>alert("Profile Updated Successfully")</script>';
                     header('Refresh: 0; URL = ../views/home.php');

@@ -12,11 +12,13 @@ class UnitTest extends TestCase {
 
         $_POST = ['submit' => 'true', 
                 'FullName' => 'Test Name', 
-                'Address' => '123 some street dr.', 
+                'Address' => '123 test street dr.', 
                 'Address2' => '', 
                 'City' => 'Houston', 
                 'State' => 'TX', 
                 'Zipcode' => '77000'];
+
+        $_SESSION["ID_check"] = 2;
 
         $testProfileObject = new profile;
         $testProfileObject->profileManagement($_POST);
@@ -26,12 +28,38 @@ class UnitTest extends TestCase {
     /**
      * @runInSeparateProcess
      */
+    public function testProfileManagementUpdate() {
+        require('includes/client.inc.php');
+
+        $_POST = ['submit' => 'true', 
+                'FullName' => 'Test Name Updated1', 
+                'Address' => '123 test street dr.', 
+                'Address2' => '', 
+                'City' => 'Houston', 
+                'State' => 'TX', 
+                'Zipcode' => '77000'];
+
+        $_SESSION["ID_check"] = 2;
+
+        $testProfileObject = new profile;
+        $testProfileObject->profileManagement($_POST);
+        $this->expectOutputString('<script>alert("Profile Updated Successfully")</script>');
+    }
+
+    /**
+     * @runInSeparateProcess
+     */
     public function testFuelForm() {
         require('includes/fuel.inc.php');
 
         $_POST = ['submit' => 'true', 
-                'GallonsRequested' => '10', 
-                'Date' => '01/01/2021'];
+                'GallonsRequested' => '10',
+                'gadd' => 'test dr.', 
+                'Date' => '2021-01-01',
+                'gprice' => '10',
+                'gamt' => '10'];
+
+        $_SESSION["ID_check"] = 2;
 
         $testFuelObject = new fuel;
         $testFuelObject->fuelQuoteForm($_POST);
@@ -124,7 +152,7 @@ class UnitTest extends TestCase {
         require('includes/signup.inc.php');
 
         $_POST = ['submit' => 'true', 
-                'uname' => 'test', 
+                'uname' => 'testuser1', 
                 'upass' => 'test'];
 
         $testRegisterObject = new register;
