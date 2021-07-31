@@ -72,11 +72,11 @@
               </div>
               <div class="input-box">
                 <div class="request">Suggested Price Per Gallon:</div>
-                <input type="number" name="gprice" />
+                <input type="number" name="gprice" readonly />
               </div>
               <div class="input-box">
                 <div class="request">Total Amount Due:</div>
-                <input type="number" name="gamt" />
+                <input type="number" name="gamt" readonly/>
               </div>
             </div>
             <div class="form-button">
