@@ -166,22 +166,11 @@ class UnitTest extends TestCase {
     public function testPricingModule() {
         require('includes/pricing.inc.php');
 
-        $GallonsRequested = "123";
+        $_SESSION["ID_check"] = 2;
 
         $testPricingObject = new PricingMod;
-        $this->assertEquals(True, $testPricingObject->setGallons($GallonsRequested));
-    }
-
-    /**
-     * @runInSeparateProcess
-     */
-    public function testPricingModule2() {
-        require('includes/pricing.inc.php');
-
-        $GallonsRequested = "0";
-
-        $testPricingObject = new PricingMod;
-        $this->assertEquals(0, $testPricingObject->getGallons($GallonsRequested));
+        $testPricingObject->getPricing();
+        $this->expectOutputString('1.7117.1');
     }
 }
 
