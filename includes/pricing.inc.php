@@ -14,15 +14,11 @@
             $rows = mysqli_fetch_array($sresult);
             $numrows = mysqli_num_rows($sresult);
 
-            $fuel = "SELECT * FROM `fuelquote` WHERE qid = '$qid'";
-            $fresult = mysqli_query($conn,$fuel);
-            $rows2 = mysqli_fetch_array($fresult);
-
             //SET STATIC VAR.
             $CurrentPrice = 1.50;
             $CompanyProfit = 0.1;
             //THIS IS GETTING THE REQUESTED GALLONS 
-            $GallonsRequested =(float) $rows2['qreq']; 
+            $GallonsRequested = $_POST['GallonsRequested']; 
 
              //ONCE I GET THE GALLONS REQUESTED MAKE SURE TO COMPARE FOR FACTOR
             if($GallonsRequested > 1000.00){
@@ -54,10 +50,15 @@
             $Total = $GallonsRequested * $SuggestedPrice;
 
             //OUTPUT suggested price and total BACK TO THE FUELQUOTEFORM.
-            echo ($SuggestedPrice);
-            echo ($Total);
+            echo json_encode(array(
+                'GallonsRequested' => $_POST['GallonsRequested'],
+                'gadd' => $_POST['gadd'], 
+                'Date' => $_POST['Date'],
+                'gprice' => $SuggestedPrice,
+                'gamt' => $Total
+            ));
 
         }
     }
-    mysqli_close($conn); 
+     
 ?>

@@ -20,6 +20,29 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+    </script>
+    <script>
+      $(document).ready(function() {
+        $('#quotebutton').click(function() {
+          var fd = $('#fuelform').serialize();
+          $.ajax ({
+            type: "POST",
+            url: "../includes/pricingHandler.php",
+            data: fd,
+            success: function(data) {
+              var afterData = jQuery.parseJSON(data);
+              $('#gprice').val(afterData.gprice);
+              $('#gamount').val(afterData.gamt);
+            }
+          })
+          return false;
+        });
+      });
+    </script>
   </head>
   <body>
     <section class="header">
@@ -56,11 +79,11 @@
             if($result) {
               while($row = mysqli_fetch_array($result)) {
           ?>
-          <form action="#" method="POST">
+          <form action="#" method="POST" id=fuelform>
             <div class="request-detail">
               <div class="input-box">
                 <div class="request">Gallons Requested:</div>
-                <input type="number" min="0" placeholder="Enter gallons requested" id= "GallonsRequested" name="GallonsRequested" oninput="manage(this)" oninput="manage2(this)" required/>
+                <input type="number" min="0" placeholder="Enter gallons requested" id= "GallonsRequested" name="GallonsRequested" oninput="manageQuote(this)" oninput="manageSubmit(this)" required/>
               </div>
               <div class="input-box">
                 <div class="request">Delivery Address:</div>
@@ -72,11 +95,11 @@
               </div>
               <div class="input-box">
                 <div class="request">Suggested Price Per Gallon:</div>
-                <input type="number" name="gprice" id="gprice" oninput="manageSubmit(this)" readonly />
+                <input type="text" name="gprice" id="gprice" oninput="manageSubmit(this)" readonly />
               </div>
               <div class="input-box">
                 <div class="request">Total Amount Due:</div>
-                <input type="number" name="gamt" id="gamount" oninput="manageSubmit(this)" readonly/>
+                <input type="text" name="gamt" id="gamount" oninput="manageSubmit(this)" readonly/>
               </div>
             </div>
             <div class="form-button">
