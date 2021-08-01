@@ -5,7 +5,7 @@
         exit;
     }
 
-    require('pricing.inc.php');
+    require('../includes/pricing.inc.php');
 
     $priceObject = new PricingMod;
     $priceObject->getPricing($_POST);

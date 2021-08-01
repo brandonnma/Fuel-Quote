@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2021 at 06:36 AM
+-- Generation Time: Aug 01, 2021 at 10:57 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -57,8 +57,8 @@ CREATE TABLE `fuelquote` (
   `qreq` int(11) NOT NULL,
   `qadd` varchar(255) NOT NULL,
   `qdate` date NOT NULL,
-  `qprice` int(11) NOT NULL,
-  `qamt` int(11) NOT NULL
+  `qprice` float NOT NULL,
+  `qamt` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -68,7 +68,8 @@ CREATE TABLE `fuelquote` (
 INSERT INTO `fuelquote` (`ordercount`, `qid`, `qreq`, `qadd`, `qdate`, `qprice`, `qamt`) VALUES
 (1, 1, 11, 'qwe', '2021-07-27', 11, 11),
 (2, 3, 10, '123 other street dr.', '2021-07-27', 10, 10),
-(3, 3, 12, '123 other street dr.', '2021-07-27', 12, 12);
+(3, 3, 12, '123 other street dr.', '2021-07-27', 12, 12),
+(4, 3, 12, '123 other street dr.', '1212-12-12', 1.71, 20.52);
 
 -- --------------------------------------------------------
 
@@ -122,7 +123,7 @@ ALTER TABLE `usercredentials`
 -- AUTO_INCREMENT for table `fuelquote`
 --
 ALTER TABLE `fuelquote`
-  MODIFY `ordercount` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ordercount` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `usercredentials`

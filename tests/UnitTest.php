@@ -56,8 +56,8 @@ class UnitTest extends TestCase {
                 'GallonsRequested' => '10',
                 'gadd' => 'test dr.', 
                 'Date' => '2021-01-01',
-                'gprice' => '10',
-                'gamt' => '10'];
+                'gprice' => '10.10',
+                'gamt' => '10.10'];
 
         $_SESSION["ID_check"] = 2;
 
@@ -166,11 +166,17 @@ class UnitTest extends TestCase {
     public function testPricingModule() {
         require('includes/pricing.inc.php');
 
+        $_POST = ['GallonsRequested' => '10',
+                'gadd' => 'test dr.', 
+                'Date' => '2021-01-01',
+                'gprice' => '',
+                'gamt' => ''];
+
         $_SESSION["ID_check"] = 2;
 
         $testPricingObject = new PricingMod;
-        $testPricingObject->getPricing();
-        $this->expectOutputString('1.7117.1');
+        $testPricingObject->getPricing($_POST);
+        $this->expectOutputString('{"GallonsRequested":"10","gadd":"test dr.","Date":"2021-01-01","gprice":1.71,"gamt":"17.10"}');
     }
 }
 

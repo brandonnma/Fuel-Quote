@@ -31,7 +31,7 @@
           var fd = $('#fuelform').serialize();
           $.ajax ({
             type: "POST",
-            url: "../includes/pricingHandler.php",
+            url: "pricingHandler.php",
             data: fd,
             success: function(data) {
               var afterData = jQuery.parseJSON(data);
@@ -86,7 +86,7 @@
               <div class="input-box">
                 <div class="request">Gallons Requested:</div>
                 <input type="number" min="0" placeholder="Enter gallons requested" id= "GallonsRequested" name="GallonsRequested" oninput="manageQuote(this)" required/>
-              </divu>
+              </div>
               <div class="input-box">
                 <div class="request">Delivery Address:</div>
                 <input type="text" name="gadd" id="gadd" oninput="manageQuote(this)"  value="<?php echo $row['cadd1']; ?>" readonly />
