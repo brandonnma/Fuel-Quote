@@ -60,27 +60,28 @@
             <div class="request-detail">
               <div class="input-box">
                 <div class="request">Gallons Requested:</div>
-                <input type="number" min="0" placeholder="Enter gallons requested" name="GallonsRequested" required/>
+                <input type="number" min="0" placeholder="Enter gallons requested" id= "GallonsRequested" name="GallonsRequested" oninput="manage(this)" oninput="manage2(this)" required/>
               </div>
               <div class="input-box">
                 <div class="request">Delivery Address:</div>
-                <input type="text" name="gadd" value="<?php echo $row['cadd1']; ?>" readonly />
+                <input type="text" name="gadd" id="gadd" oninput="manage(this)" oninput="manage2(this)" value="<?php echo $row['cadd1']; ?>" readonly />
               </div>
               <div class="input-box">
                 <div class="request">Delivery Date:</div>
-                <input type="Date" name="Date" />
+                <input type="Date" name="Date" id="date" oninput="manage(this)" oninput="manage2(this)" />
               </div>
               <div class="input-box">
                 <div class="request">Suggested Price Per Gallon:</div>
-                <input type="number" name="gprice" readonly />
+                <input type="number" name="gprice" id="gprice" oninput="manage2(this)" />
               </div>
               <div class="input-box">
                 <div class="request">Total Amount Due:</div>
-                <input type="number" name="gamt" readonly/>
+                <input type="number" name="gamt" id="gamount" oninput="manage2(this)" />
               </div>
             </div>
             <div class="form-button">
-              <input type="submit" value="Submit" name="submit"/>
+              <input type="submit" id= "quotebutton" value="Quote" name="Quote" disabled/>
+              <input type="submit" id= "submitbutton" value="Submit" name="submit" disabled/>
             </div>
           </form>
           <?php
@@ -96,5 +97,24 @@
       </div>
     </section>
   </body>
+  <script>
+    function manage(quotetxt){
+      var qb = document.getElementById('quotebutton');
+      if(GallonsRequested.value != ''&&gadd.value!= '' && date.value != ''){
+        qb.disabled = false;
+      }
+      else{
+        qb.disabled = true;
+      }
+    }
+    function manage2(submittxt){
+      var sb = document.getElementById('submitbutton');
+      if(GallonsRequested.value != ''&&gadd.value!= '' && date.value != ''&&gprice.value != ''&&gamount.value != ''){
+        sb.disabled = false;
+      }
+      else{
+        sb.disabled = true;
+      }
+    }
+  </script>
 </html>
-
