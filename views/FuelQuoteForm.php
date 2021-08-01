@@ -64,19 +64,19 @@
               </div>
               <div class="input-box">
                 <div class="request">Delivery Address:</div>
-                <input type="text" name="gadd" id="gadd" oninput="manage(this)" oninput="manage2(this)" value="<?php echo $row['cadd1']; ?>" readonly />
+                <input type="text" name="gadd" id="gadd" oninput="manageQuote(this)" oninput="manageSubmit(this)" value="<?php echo $row['cadd1']; ?>" readonly />
               </div>
               <div class="input-box">
                 <div class="request">Delivery Date:</div>
-                <input type="Date" name="Date" id="date" oninput="manage(this)" oninput="manage2(this)" />
+                <input type="Date" name="Date" id="date" oninput="manageQuote(this)" oninput="manageSubmit(this)" />
               </div>
               <div class="input-box">
                 <div class="request">Suggested Price Per Gallon:</div>
-                <input type="number" name="gprice" id="gprice" oninput="manage2(this)" readonly />
+                <input type="number" name="gprice" id="gprice" oninput="manageSubmit(this)" readonly />
               </div>
               <div class="input-box">
                 <div class="request">Total Amount Due:</div>
-                <input type="number" name="gamt" id="gamount" oninput="manage2(this)" readonly />
+                <input type="number" name="gamt" id="gamount" oninput="manageSubmit(this)" readonly/>
               </div>
             </div>
             <div class="form-button">
@@ -98,7 +98,7 @@
     </section>
   </body>
   <script>
-    function manage(quotetxt){
+    function manageQuote(quotetxt){
       var qb = document.getElementById('quotebutton');
       if(GallonsRequested.value != ''&&gadd.value!= '' && date.value != ''){
         qb.disabled = false;
@@ -107,7 +107,7 @@
         qb.disabled = true;
       }
     }
-    function manage2(submittxt){
+    function manageSubmit(submittxt){
       var sb = document.getElementById('submitbutton');
       if(GallonsRequested.value != ''&&gadd.value!= '' && date.value != ''&&gprice.value != ''&&gamount.value != ''){
         sb.disabled = false;
