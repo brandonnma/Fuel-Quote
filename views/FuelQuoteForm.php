@@ -37,6 +37,8 @@
               var afterData = jQuery.parseJSON(data);
               $('#gprice').val(afterData.gprice);
               $('#gamount').val(afterData.gamt);
+              //Active the submit button
+              $('#submitbutton').attr("disabled",false);
             }
           })
           return false;
@@ -83,23 +85,23 @@
             <div class="request-detail">
               <div class="input-box">
                 <div class="request">Gallons Requested:</div>
-                <input type="number" min="0" placeholder="Enter gallons requested" id= "GallonsRequested" name="GallonsRequested" oninput="manageQuote(this)" oninput="manageSubmit(this)" required/>
-              </div>
+                <input type="number" min="0" placeholder="Enter gallons requested" id= "GallonsRequested" name="GallonsRequested" oninput="manageQuote(this)" required/>
+              </divu>
               <div class="input-box">
                 <div class="request">Delivery Address:</div>
-                <input type="text" name="gadd" id="gadd" oninput="manageQuote(this)" oninput="manageSubmit(this)" value="<?php echo $row['cadd1']; ?>" readonly />
+                <input type="text" name="gadd" id="gadd" oninput="manageQuote(this)"  value="<?php echo $row['cadd1']; ?>" readonly />
               </div>
               <div class="input-box">
                 <div class="request">Delivery Date:</div>
-                <input type="Date" name="Date" id="date" oninput="manageQuote(this)" oninput="manageSubmit(this)" />
+                <input type="Date" name="Date" id="date" oninput="manageQuote(this)"  />
               </div>
               <div class="input-box">
                 <div class="request">Suggested Price Per Gallon:</div>
-                <input type="text" name="gprice" id="gprice" oninput="manageSubmit(this)" readonly />
+                <input type="text" name="gprice" id="gprice"  readonly />
               </div>
               <div class="input-box">
                 <div class="request">Total Amount Due:</div>
-                <input type="text" name="gamt" id="gamount" oninput="manageSubmit(this)" readonly/>
+                <input type="text" name="gamt" id="gamount" readonly/>
               </div>
             </div>
             <div class="form-button">
@@ -121,6 +123,7 @@
     </section>
   </body>
   <script>
+    //FOR THE GET QUOTE BUTTON
     function manageQuote(quotetxt){
       var qb = document.getElementById('quotebutton');
       if(GallonsRequested.value != ''&&gadd.value!= '' && date.value != ''){
@@ -130,14 +133,5 @@
         qb.disabled = true;
       }
     }
-    function manageSubmit(submittxt){
-      var sb = document.getElementById('submitbutton');
-      if(GallonsRequested.value != ''&&gadd.value!= '' && date.value != ''&&gprice.value != ''&&gamount.value != ''){
-        sb.disabled = false;
-      }
-      else{
-        sb.disabled = true;
-      }
-    }
-  </script>
+  </script>  
 </html>
