@@ -18,7 +18,7 @@
             $CurrentPrice = 1.50;
             $CompanyProfit = 0.1;
             //THIS IS GETTING THE REQUESTED GALLONS 
-            $GallonsRequested = $_POST['GallonsRequested']; 
+            $GallonsRequested = (float)$_POST['GallonsRequested']; 
 
              //ONCE I GET THE GALLONS REQUESTED MAKE SURE TO COMPARE FOR FACTOR
             if($GallonsRequested > 1000.00){
@@ -48,6 +48,7 @@
             $Margin = $CurrentPrice * ($LocationFactor - $RateHistory + $GallonsRequestedFactor + $CompanyProfit);
             $SuggestedPrice = $CurrentPrice + $Margin;
             $Total = $GallonsRequested * $SuggestedPrice;
+            $Total = number_format($Total,2,'.','');
 
             //OUTPUT suggested price and total BACK TO THE FUELQUOTEFORM.
             echo json_encode(array(
