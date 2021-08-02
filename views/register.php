@@ -33,7 +33,7 @@
     ?>
   <div class="form-box">
     <div class="companyname">
-      <h1>Company Name/logo</h1>
+      <h1>Registration</h1>
     </div>
     <form id="Register" class="inputtabs" action="#" method="post">
       <input type="text" name="uname" class = "input-field" placeholder="User ID" required>

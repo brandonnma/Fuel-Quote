@@ -38,7 +38,7 @@
       <!------Fuel Quote History Page------>
       <div class="form-position">
         <div class="form-container">
-          <div class="form-head">"Client's Name's" Quotes Hisory</div>
+          <div class="form-head">Fuel Quote Hisory</div>
             <table class="history-table">
               <thead>
                 <tr>
